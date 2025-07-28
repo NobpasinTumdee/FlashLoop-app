@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 const mainstyles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#d6e8faff', // สีพื้นหลังอ่อนๆ
+    backgroundColor: '#D8D2C3', // สีพื้นหลังอ่อนๆ
     paddingTop: 50, // ระยะห่างด้านบนสำหรับ Status Bar
     paddingHorizontal: 20, // ระยะห่างด้านข้าง
   },
@@ -12,15 +12,15 @@ const mainstyles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    fontSize: 32,
+    fontSize: 25,
     fontWeight: '700',
-    color: '#334155', // สีข้อความเข้ม
+    color: '#334155',
   },
   inputContainer: {
     flexDirection: 'row',
     marginBottom: 20,
     backgroundColor: '#ffffff',
-    borderRadius: 12, // ขอบมน
+    borderRadius: 20,
     shadowColor: '#000', // เงา
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
@@ -33,16 +33,16 @@ const mainstyles = StyleSheet.create({
     paddingVertical: 14,
     paddingHorizontal: 16,
     fontSize: 18,
-    color: '#334155',
+    color: '#513A2A',
+    backgroundColor: '#CDC0AF',
   },
   addButton: {
-    backgroundColor: '#4f46e5', // สีปุ่มม่วง
+    backgroundColor: '#513A2A',
     paddingVertical: 14,
     paddingHorizontal: 20,
     justifyContent: 'center',
     alignItems: 'center',
-    borderTopRightRadius: 12,
-    borderBottomRightRadius: 12,
+    borderRadius: 50,
   },
   addButtonText: {
     color: '#ffffff',

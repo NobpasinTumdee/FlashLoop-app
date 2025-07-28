@@ -10,31 +10,25 @@ import {
 
 import mainstyles from './styles/main';
 
-// Component หลักของแอป To-Do List
 export default function App() {
-  // State สำหรับเก็บรายการ To-Do
   const [todos, setTodos] = useState([]);
-  // State สำหรับเก็บข้อความที่กำลังพิมพ์ในช่อง input
   const [newTodo, setNewTodo] = useState('');
 
-  // ฟังก์ชันสำหรับเพิ่ม To-Do ใหม่
   const addTodo = () => {
-    if (newTodo.trim().length > 0) { // ตรวจสอบว่ามีข้อความหรือไม่
+    if (newTodo.trim().length > 0) {
       setTodos(currentTodos => [
         ...currentTodos,
-        { id: Math.random().toString(), text: newTodo.trim() }, // สร้าง ID แบบสุ่ม
+        { id: Math.random().toString(), text: newTodo.trim() },
       ]);
-      setNewTodo(''); // ล้างช่อง input หลังจากเพิ่ม To-Do
-      Keyboard.dismiss(); // ซ่อนคีย์บอร์ด
+      setNewTodo('');
+      Keyboard.dismiss();
     }
   };
 
-  // ฟังก์ชันสำหรับลบ To-Do
   const deleteTodo = (id) => {
     setTodos(currentTodos => currentTodos.filter(todo => todo.id !== id));
   };
 
-  // Component สำหรับแต่ละรายการ To-Do ใน FlatList
   const TodoItem = ({ item }) => (
     <View style={mainstyles.todoItem}>
       <Text style={mainstyles.todoText}>{item.text}</Text>
@@ -46,25 +40,24 @@ export default function App() {
 
   return (
     <View style={mainstyles.container}>
-      {/* ส่วนหัวของแอป */}
       <View style={mainstyles.header}>
-        <Text style={mainstyles.title}>รายการสิ่งที่ต้องทำ</Text>
+        <Text style={mainstyles.title}>TO DO LIST</Text>
       </View>
 
-      {/* ส่วนสำหรับเพิ่ม To-Do ใหม่ */}
+
       <View style={mainstyles.inputContainer}>
         <TextInput
           style={mainstyles.textInput}
-          placeholder="เพิ่มรายการใหม่..."
+          placeholder="Add new list..."
           value={newTodo}
           onChangeText={text => setNewTodo(text)}
           onSubmitEditing={addTodo} // กด Enter เพื่อเพิ่ม To-Do
           returnKeyType="done"
         />
-        <TouchableOpacity onPress={addTodo} style={mainstyles.addButton}>
-          <Text style={mainstyles.addButtonText}>เพิ่ม</Text>
-        </TouchableOpacity>
       </View>
+      <TouchableOpacity onPress={addTodo} style={mainstyles.addButton}>
+        <Text style={mainstyles.addButtonText}>ADD</Text>
+      </TouchableOpacity>
 
       {/* ส่วนแสดงรายการ To-Do */}
       <FlatList
@@ -73,7 +66,7 @@ export default function App() {
         keyExtractor={item => item.id}
         contentContainerStyle={mainstyles.listContainer}
         ListEmptyComponent={() => (
-          <Text style={mainstyles.emptyListText}>ยังไม่มีรายการสิ่งที่ต้องทำ</Text>
+          <Text style={mainstyles.emptyListText}>There is no To-Do list</Text>
         )}
       />
     </View>
