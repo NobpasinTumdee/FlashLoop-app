@@ -19,22 +19,18 @@ const mainstyles = StyleSheet.create({
   inputContainer: {
     flexDirection: 'row',
     marginBottom: 20,
-    backgroundColor: '#ffffff',
-    borderRadius: 20,
-    shadowColor: '#000', // เงา
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3, // เงาสำหรับ Android
+    backgroundColor: 'transparent',
     overflow: 'hidden', // ซ่อนส่วนเกินของเงา
   },
   textInput: {
     flex: 1,
     paddingVertical: 14,
-    paddingHorizontal: 16,
+    paddingHorizontal: 25,
     fontSize: 18,
     color: '#513A2A',
     backgroundColor: '#CDC0AF',
+    borderRadius: 20,
+    boxShadow: '#6e6355ff 3px 3px 6px 0px inset, #887e71ff -3px -3px 6px 1px inset',
   },
   addButton: {
     backgroundColor: '#513A2A',
@@ -50,13 +46,15 @@ const mainstyles = StyleSheet.create({
     fontWeight: '600',
   },
   listContainer: {
-    paddingBottom: 20, // ระยะห่างด้านล่างของรายการ
+    paddingBottom: 20,
+    marginTop: 30,
   },
   todoItem: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: '#ffffff',
+    backgroundColor: '#CDC0AF',
+    color: '#513A2A',
     paddingVertical: 16,
     paddingHorizontal: 18,
     borderRadius: 12,
@@ -70,10 +68,10 @@ const mainstyles = StyleSheet.create({
   todoText: {
     flex: 1, // ให้ข้อความขยายเต็มพื้นที่ที่เหลือ
     fontSize: 18,
-    color: '#334155',
+    color: '#513A2A',
   },
   deleteButton: {
-    backgroundColor: '#ef4444', // สีปุ่มแดง
+    backgroundColor: '#513A2A', // สีปุ่มแดง
     width: 36,
     height: 36,
     borderRadius: 18, // ทำให้เป็นวงกลม
